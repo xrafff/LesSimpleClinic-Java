@@ -1,0 +1,14 @@
+.center {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+
+}
+
+.login{
+    padding: 20px;
+  background-image: linear-gradient(to bottom, rgb(212, 225, 233) 0%, rgb(212, 225, 233) 100%), linear-gradient(to bottom, rgb(212, 225, 233) 0%, rgb(212, 225, 233) 100%);
+  background-clip: content-box, padding-box;
+  border-radius: 10%;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    
+    <body>
+<div id="formulario">
+
+    <form>
+      <div>
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome" />
+      </div>
+      <div>
+        <label for="agencia"> Agência: </label>
+        <input type="text" id="agencia" />
+      </div>
+  
+      <div>
+        <label for="conta"> Conta: </label>
+        <input type="text" id="conta" />
+      </div>
+  
+      <div class="button">
+        <button id="enviar" type="button">Localizar conta de endereco</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    //Variáveis dos inputs (html, sem o .value)
+    var nome = document.getElementById('nome');
+    var agencia = document.getElementById('agencia');
+    var conta = document.getElementById('conta');
+    //Variável do objeto que será guardado
+    var obj;
+  
+    //Adiciona um ouvinte de evento ao botão para quando o usuário clicar nele
+    document.getElementById('enviar').addEventListener('click', function() {
+      //Monta o objeto que será salvo
+      obj = {
+        nome: nome.value,
+        agencia: agencia.value,
+        conta: conta.value
+      };
+  
+      //Mostra no console o objeto antes de ser salvo no localStorage
+      console.log(obj.valueOf());
+  
+      //Salva o objeto no localStorage
+      localStorage[nome.value] = JSON.stringify(obj);
+  
+      //Mostra no console o objeto salvo
+      console.log(JSON.parse(localStorage[nome.value]).valueOf());
+    });
+  </script>
+
+</body>
+        </html>
